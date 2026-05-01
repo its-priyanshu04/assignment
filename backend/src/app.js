@@ -20,6 +20,10 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running ✅");
+});
+
 app.get("/health", (req, res) => {
   res.json({ success: true, message: "API is running" });
 });
